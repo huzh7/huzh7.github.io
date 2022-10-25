@@ -1,0 +1,185 @@
+
+<!-- htmlcs-disable -->
+<!-- csshint-disable -->
+<!-- eslint-disable -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>海南捷讯嘉</title>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate, pre-check=0, post-check=0">
+    <meta http-equiv="expires" content="0">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .brand-containter {
+        background-color: #f5f6f8;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .content img {
+        width: 100%;
+    }
+
+    .brand-bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #fff;
+        margin-top: 48px;
+        font-size: 12px;
+        color: #848484;
+        line-height: 24px;
+    }
+
+    a {
+        text-decoration: none;
+        cursor: pointer;
+        outline: none;
+        font: inherit;
+        color: inherit;
+        margin-left: 15px;
+    }
+
+    a:hover {
+        color: #5a606b;
+        text-decoration: underline;
+    }
+    .float-layer {
+        position: fixed;
+        right: 12px;
+        top: 78%;
+        z-index: 9;
+        display: flex;
+        text-align: center;
+        cursor: pointer;
+    }
+    .float-layer:hover .tooltip {
+        display: flex;
+        align-items: center;
+    }
+    .float-layer:hover .float-content {
+        color: #0066FF;
+    }
+    .float-layer .float-content {
+        width: 78px;
+        height: 78px;
+        background-color: #f9faff;
+        color: #545B66;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 8px 10px 1px rgba(0,0,0,0.06);
+        border-radius: 39px;
+    }
+
+    .float-layer img {
+        width: 19.47px;
+        height: 23.33px;
+        color: #0066FF;
+    }
+    .float-layer p {
+        font-family: PingFangSC-Medium;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .float-layer .tooltip {
+        display: none;
+    }
+    .float-layer .tooltip .tooltip-inner{
+        width: 150px;
+        height: 68px;
+        background: #FFFFFF;
+        margin-top: 5px;
+        text-align: center;
+        letter-spacing: 0;
+        border-radius: 5px;
+        box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.06);
+    }
+    .float-layer .tooltip h3{
+        font-family: PingFangSC-Medium;
+        font-size: 14px;
+        color: #282C33;
+        font-weight: 500;
+        margin-top: 15px;
+    }
+    .float-layer .tooltip h4{
+        font-family: PingFangSC-Regular;
+        font-size: 12px;
+        color: #848B99;
+        font-weight: 400;
+    }
+    .tooltip .tooltip-arrow::after{
+        content: "";
+        display: block;
+        margin: 8px auto;
+        width: 0;
+        height: 0;
+        border: 8px solid transparent;
+        border-left-color: white;
+        transform: translate(-1px, -10px);
+    }
+</style>
+</head>
+<body>
+    <div class="brand-containter">
+        <div class="content" id="content">
+        </div>
+        <div class="float-layer" id="float-layer">
+            <div class="tooltip">
+                <div class="tooltip-inner">
+                    <h3>400-921-5119</h3>
+                    <h4>为您提供举报热线</h4>
+                </div>
+                <div class="tooltip-arrow"></div>
+            </div>
+            <div class="float-content">
+                <div>
+                    <p>投诉建议</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="brand-bottom">
+        <div>
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=46902302000510">联网备案号46902302000510</a>
+            <a target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index" id="register">琼ICP备19001825号</a>
+            海南捷讯嘉科技有限公司（公司名称）版权所有</div>
+        <div>投诉举报热线：400-921-5119&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮箱：ask@baidu.com</div>
+    </div>
+</body>
+<script type="text/javascript">
+    const href = window.location.host;
+    const registeDom = document.querySelector('#register');
+    let registeText = document.createElement('span');
+    let imgUrl = '';
+    const REG_CONFIG = {
+        vejianzhan: '-5',
+        medjxj: '-4',
+        finjxj: '-3'
+    };
+    const siteList = Object.keys(REG_CONFIG).filter(key => href.indexOf(key) > -1);
+    if (siteList.length > 0) {
+        const key = siteList[0];
+        imgUrl = "record_page_optimize_no_we.png";
+        registeText.innerText = REG_CONFIG[key];
+    }
+    else {
+        imgUrl = "record_page_optimize.png";
+        registeText.innerText = "-6"
+    }
+    registeDom.appendChild(registeText);
+    const img = document.createElement("img");
+    const content = document.getElementById("content");
+    img.src = imgUrl;
+    content.appendChild(img);
+</script>
+</html>
