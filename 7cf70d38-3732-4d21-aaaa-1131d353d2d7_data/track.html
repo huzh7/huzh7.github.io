@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title></title>
+        <style>
+            html, body, iframe {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                font-size: 0;
+                overflow: hidden;
+                font-family: cicons, Arial, sans-serif;
+            }
+
+            .layout-loading:after {
+                content: "";
+                background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABFCAMAAAArU9sbAAAAllBMVEUAAAA5kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv85kv98v3f9AAAAMXRSTlMA+u4H8xwSDeG7KBapjYhP28EE9jfmpJoxItOALLFuQcxrZOrXdnPHVDyVe11aSIN5drPNPgAAAx5JREFUWMOlmOl2qlAMhbcyySCiBUFRUazzVXve/+Vuk2NZTgwHvx+uVjBk2MmJopxRkvvecBn0gqXt+ecZ1DEW8654ZO3lLhTQznZHvKNj70dohrWNRDm9rYZ6Rqsiki/7uBhkiZNkg208LLyL/qGOcCkk39eD9hhm5veEZDirdsS/eRGHby9nY+lRZ1VVmJ200XfLb4mlnbmJEhzpsWegCseWEZfcFXJau3vUkX9xsZy3RvjaboJ6Zt/8vNmbK+zJWGsmKZvF/PJEg3PSb6zuMd0emE/v7hSMMGxmjgf6HI5Sr3FQC9yRsSI1qGBNSX7OnSbpjbUBNRydHo2CDbkygCo5faxoTVfnpKgzpA7XIKEW1F2oM6OeWoExyZUr2hBTJ4xALFq5wkzIGdl40xe9qWlvzsFRph20IyPNUBzp7x9LtGRE7ZcD2LGQW8L19QCLEjRBWw6keuBCxUJrRjTbZliwS+0Zchccf19PaA1/3ofNumnPimMJfl9DtGfA46HLJWpPSGcTqNAmKnCT6r7mGpP+raqG64qxW2uFxoKBcjw6vxYjlJHQiYKophfngliGVeJdgg7LqsgtXy4JsVlRI9beoMmSsM7L9cJDb1OniUAQO+nz63mYYttk/msnnVeo/ms1ydEzLpzjWgxPENH5uad1zqspuNT1ZFNB2M5LibojObxzNN9hO/59WOltfPtcqka4sVyci5pKH1bcTgr9mOzkhvl3f1LkI+BaNeVfxMtsqhWHow3ihxJkoSlWn8UcXCjEr2JrcPVX4TURs2fAv1sa+uSMCQWkmPUrubIFI/06QgXtxNvxQy58+vcAFVjMj/uhFZEKTKhxJiNT7WFIkATVMH396fgYqy7NjHk9PYqAvx/84EMc7rQNPiT8kkF9yKBTfJP73EzvgM/IuoKI3Wq5pW5NiqfyzNhY5cVNdbHe17RHfGuO1MA7Jn1dtrNWk5zo73eJ3Hg2sRgKSZA1G0JMMN4MQscwzUm4//F64oZ+0lCPS26X0k2basHcTEtsLFcWFEj86auJ1IEy5mUbD4NIF3r0bR+3lwov/gPz4J/MfidXggAAAABJRU5ErkJggg==);
+                background-size: 100% 100%;
+                width: 34px;
+                height: 34px;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                margin: -17px 0 0 -17px;
+                z-index: 100000;
+                -webkit-animation: loading-rotate 1s linear infinite;
+                animation: loading-rotate 1s linear infinite
+            }
+
+            .layout-loading .layout-header {
+                background: #3D88F2;
+                border-radius: 4px 4px 0 0;
+                height: 44px;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                font-size: 0;
+                display: block;
+            }
+
+            .layout-header{
+                display: none;
+            }
+
+            .header-title {
+                font-size: 16px;
+                line-height: 44px;
+                color: #fff;
+                margin-left: 20px;
+            }
+            .track-hide {
+                display: block;
+                width: 44px;
+                height: 44px;
+                transform: rotate(-90deg);
+                cursor: pointer;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .track-hide:after {
+                content: " ";
+                font-size: 0;
+                line-height: 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+                border: 1px solid #fff;
+                display: block;
+                position: absolute;
+                left: 20px;
+                top: 21px;
+                width: 7px;
+                height: 7px;
+                border-top: 0;
+                border-right: 0;
+            }
+
+            @-webkit-keyframes loading-rotate {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg)
+                }
+
+                to {
+                    -webkit-transform: rotate(1turn);
+                    transform: rotate(1turn)
+                }
+            }
+
+            @keyframes loading-rotate {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg)
+                }
+
+                to {
+                    -webkit-transform: rotate(1turn);
+                    transform: rotate(1turn)
+                }
+            }
+        </style>
+    <link rel="stylesheet" href="a_data/imlpstyle_002.css"><link rel="stylesheet" href="track_data/imlpstyle_002.css"><link rel="stylesheet" href="track_data/imlpstyle.css"></head>
+    <body class="layout-loading">
+        <div class="layout-header">
+            <span class="header-title">正在加载中...</span>
+            <div class="track-hide"></div>
+        </div>
+
+        <script>
+            var pageKey = '';
+            var serverXST = '';
+            var serverBaiduid = '2942FA1F1998F60101C2F54BA033C1BC:FG=1';
+            window.pageQuery = {
+                sdkVersion: parseInt('1') || 0,
+                sdkReferrer: 'https://aisite.wejianzhan.com/site/jialilaw.com/7cf70d38-3732-4d21-aaaa-1131d353d2d7?source=baidu2&amp;plan=YD-pinpaici-&amp;unit=pinpai-lvshimingdan&amp;keyword=yiyilvshi&amp;fid=nHDznHRYnjbznjmdPH6sn1bzrHNxnWc1g1c&amp;ch=4&amp;bd_vid=nHDznHRYnjbznjmdPH6sn1bzrHNxnWc1g1FxnH0sg1wxPjfkrj0vnHmkPW6&amp;ch=4&amp;bd_bxst=EiaKO4zFuY0WGuEx00cD0ArF36DCwO_X000000WidSM1s_M2G60000000000cbndPWmLPHRvwHRvwb7aPYRdPWn3n16LnRckwjf3fY7Kxj06nHmLf1b1rHm4wjRdnRfkrRwjwDD4nRDswjckwW6LPWUyZRYcToohr0D000jC_d4Fa60005wES9Ts00000faK0fWidSM1s_M2G9oidSM1s_M2GBjgJPXB8SMiqo1iz_cVzVxi_s00Uig41f',
+                serverBaiduid: '2942FA1F1998F60101C2F54BA033C1BC:FG=1',
+                serverXST: '',
+                abTest: '',
+                disables: ["yinlibo_v7","history","yimei_popup_image","new_action","detention_new","yimei_popup_1","baozhang_btn","huanran_all","antou_reverse","newsdk","lemon_project_card","keyboard_auto","phone_modal_off","track","typebox3","link","render_off","float_phone","heatTime","telcopy","auto_invite","xhtest","video2","doctor_redirect","skeleton_first","yxt_off","phone_modal_on"],
+                // effectiveTest: false,
+                enables: ["guess","new_recommend","msg_format","new_detention_style","kefu_input_status","huanran","avatar","article_video","typebox2","dynamic3","typebox","input_case","standardcard_video","standardcard","theme","dynamic_card_3","dynamic_5","skeleton","video","heatTotal","consultWord","show_unread_message","invite","anti_js","message_read1","phone_plus_off","page_navigation","cardpopup_style","hospital_address","offline_form"],
+                feature: {"ai_00001":true,"dynamic_00002":true,"order_by_interest":true,"slide_menu":true,"back_notice":true,"guess_card":true,"consult_widget":true,"custom_awake":true,"rebound":true,"iframe_back":true,"safe_number":true,"xhtest":true,"native_phone":true,"baozhang":true,"predictor":true,"telcopy":true,"topic":true,"telblue":true,"native_card":true,"track":true,"invite":true,"standardcard":true,"standardcard_video":true,"typebox":true,"typebox2":true,"typebox3":true,"kefu_input_status":true,"render_off":true,"input_case":true,"link":true,"lemon_ask_doctor":true,"phone_modal_on":true,"message_read1":true,"keyboard_auto":true,"cardpopup_style":true,"offline_form":true,"huanran":true},
+            };
+
+
+            function getFeatureData(features, disables, enables) {
+                features = features || {};
+                disables = disables || [];
+                enables = enables || [];
+                var result = {};
+                disables.forEach(function (feature) {
+                    result[feature] = false;
+                });
+                enables.forEach(function (feature) {
+                    result[feature] = true;
+                });
+
+                // 焕然关 关掉保障
+                result.baozhang_btn = result.baozhang_btn && result.huanran;
+                return result;
+            }
+            window.pageQuery.feature = getFeatureData(window.pageQuery.feature, window.pageQuery.disables, window.pageQuery.enables);
+        </script>
+
+        
+
+        <script src="a_data/bundle_8505386.js"></script>
+        <script crossorigin="" src="track_data/track_59075fb.js"></script>
+
+        
+        
+        <script crossorigin="" src="a_data/vendor.js"></script>
+        <script crossorigin="" src="a_data/sdk.js"></script>
+        <script crossorigin="" src="a_data/runtime.js"></script>
+        <script crossorigin="" src="a_data/commons.js"></script>
+        
+            <script type="text/javascript" src="track_data/sdk"></script>
+            
+            <script crossorigin="" src="track_data/iclient_pc.js"></script><script type="text/javascript" src="a_data/api"></script>
+            
+            <script crossorigin="" src="track_data/iclient_pc_popup.js"></script>
+        
+         
+    <script type="text/javascript">!function() {
+            pageKey = '730d0925b9096a6ecdc16da304ba3909' || '';
+        }();</script>
+
+<script src="a_data/getscript"></script></body></html>
